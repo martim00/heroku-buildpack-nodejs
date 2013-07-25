@@ -187,9 +187,11 @@ echo "export PATH=\"\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\"" > $BUILD_DIR/.
 
 # Clone the already compiled ffmped binaries from github
 FFMPEG_BINARY="https://github.com/dzello/ffmpeg-heroku.git"
-VENDOR_FOLDER="vendor/ffmpeg"
+VENDOR_FOLDER="vendor/ffmpeg/bin"
 
-#mkdir -p $1/$VENDOR_FOLDER  &> /dev/null
+mkdir -p $1/$VENDOR_FOLDER  &> /dev/null
 #git clone $FFMPEG_BINARY $1/$VENDOR_FOLDER  &> /dev/null
-#echo "Cloning pre-built ffmpeg repository..."
+cp $1/vendor/ffmpeg-static/ffmpeg $1/$VENDOR_FOLDER 
+cp $1/vendor/ffmpeg-static/ffprobe $1/$VENDOR_FOLDER 
+echo "Cloning pre-built ffmpeg repository..."
 
